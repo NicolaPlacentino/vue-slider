@@ -1,0 +1,144 @@
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* general */
+
+body{
+    font-family: sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    height: 100vh;
+}
+
+.carousel figure{
+    width: 1000px;
+    height: 500px;
+    
+    overflow: hidden;
+    
+    color: white;
+    text-shadow: 0 0 3px black;
+    border: 1.5px solid black;
+    border-radius: 5px 0px 0px 5px;
+
+    display: none;
+}
+
+.carousel figure img{
+    object-fit: cover;
+    object-position: center right;
+    height: 100%;}
+
+.carousel h3{
+    margin-bottom: 8px;
+}
+
+.carousel figure figcaption{
+    width: 80%;
+    text-align: right;
+
+    bottom: 30px;
+    right: 20px;
+}
+
+.carousel figure.active{
+    display: block;
+}
+
+.thumbnail{
+    height: 500px;
+    width: 200px;
+
+    border: 1.5px solid black;
+    border-left: 0;
+    border-radius: 0px 5px 5px 0px;
+
+    overflow: hidden;
+}
+
+.thumbnail figure{
+    height: 20%;
+    width: 100%;
+    filter: brightness(0.7);
+
+    overflow: hidden;
+
+    transition: all 0.3s;
+}
+
+.thumbnail figure:hover{
+    filter: brightness(1);
+
+}
+
+.thumbnail figure img{
+    object-fit: cover;
+    object-position: center right;
+    height: 100%;
+}
+
+.thumbnail .active{
+    border: 3px solid whitesmoke;
+
+    filter: brightness(1);
+
+    transition: all 0.3s;
+}
+
+
+#prev, #next{
+    background-color: whitesmoke;
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+#prev{
+    top: 10px;
+}
+
+#next{
+    bottom: 10px;
+}
+
+/* utils */
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.p-relative{
+    position: relative;
+}
+
+.p-absolute{
+    position: absolute;
+}
