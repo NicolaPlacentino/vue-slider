@@ -10,9 +10,12 @@ Bisogna fare in modo che il carosello sia "infinito":
 se clicco sul next e sono all'ultima immagine, ricomincio dalla prima; 
 se sono alla prima immagine e clicco sul prev vado all'ultima.*/
 
+console.log('Vue OK', Vue)
+
 const app = Vue.createApp({
     data(){
-        return{
+        return {
+            currentActiveIndex: 0,
             games: [
                 {
                   image: 'img/01.webp',
@@ -37,7 +40,24 @@ const app = Vue.createApp({
                 }
             ]
         }
+    },
+    methods:{
+        modifyCurrentActiveIndex(target){
+            if(target === 'next'){
+                this.currentActiveIndex++
+
+                if (this.currentActiveIndex === this.games.length) {
+                    this.currentActiveIndex = 0
+                }
+            } else if (target === 'prev'){
+                this.currentActiveIndex--
+
+                if (this.currentActiveIndex < 0) {
+                    this.currentActiveIndex = this.games.length - 1
+                }
+            }
+        }
     }
 });
 
-app.mount('#root');
+app.mount('#root')
